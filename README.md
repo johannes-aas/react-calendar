@@ -8,8 +8,10 @@ A modern, responsive event calendar component built with React, TypeScript, and 
 ![Vite](https://img.shields.io/badge/Vite-7.1.2-646CFF)
 
 
+![Calendar preview](./calendar.png)
 
-## Get started
+
+## Getting started
 
 ### Installation
 
@@ -52,14 +54,7 @@ function App() {
       type: 'course',
       locationName: 'Conference Room A'
     },
-    {
-      id: '2',
-      title: 'Multi-day Conference',
-      start: new Date(2024, 0, 20, 9, 0),
-      end: new Date(2024, 0, 22, 17, 0),
-      type: 'networking',
-      locationName: 'Convention Center'
-    }
+    // ... more events
   ]
 
   return (
@@ -128,6 +123,7 @@ export const eventCategories = {
       // The item trigger
       item: "bg-blue-100 text-blue-900 border-blue-500 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-600",
 
+      // Gradient to fade out overflowing text, must match background of item 
       itemFade: "to-blue-100 dark:to-blue-950",
 
       // popover card
@@ -160,6 +156,6 @@ src/
 ├── types/
 │   └── types.ts
 └── utils/
-    ├── computeCalendarLayout.ts
+    ├── computeCalendarLayout.ts  # layout magic
     └── utils.ts
 ```
