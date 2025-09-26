@@ -28,7 +28,7 @@ export const Demo = () => {
   });
 
   return (
-    <div className="max-w-5xl mx-auto p-4 mb-8">
+    <div className="max-w-6xl mx-auto p-4 mb-8">
       <div className="flex justify-between items-start">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           React Event Calendar
@@ -47,7 +47,7 @@ export const Demo = () => {
           </button>
           <div className="flex justify-center">
             <a
-              href="https://github.com/johannes-aas/react-calendar" // Replace with your actual GitHub URL
+              href="https://github.com/johannes-aas/react-calendar"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 hover:bg-gray-200 dark:hover:bg-neutral-700 transition-colors duration-200 rounded-full"
@@ -71,31 +71,31 @@ export const Demo = () => {
       <EventCalendar year={view.year} month={view.month} events={events} />
       
       <div className="mt-20 mb-10">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6">
+        <div className="">
+          <h2 className="text-3xl font-bold mb-6">
             Features
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <div className="flex items-center gap-4 p-5 bg-gray-100 dark:bg-neutral-800 rounded-lg">
-              <MultiDay width={30} height={30} className="text-blue-500" />
+              <MultiDay width={30} height={30} className="text-blue-500 flex-shrink-0" />
               <span className="text-gray-700 dark:text-white text-lg">
                 Multi-day event support
               </span>
             </div>
             <div className="flex items-center gap-4 p-5 bg-gray-100 dark:bg-neutral-800 rounded-lg">
-              <Layout width={30} height={30} className="text-green-500" />
+              <Layout width={30} height={30} className="text-green-500 flex-shrink-0" />
               <span className="text-gray-700 dark:text-white text-lg">
                 Smart layout
               </span>
             </div>
             <div className="flex items-center gap-4 p-5 bg-gray-100 dark:bg-neutral-800 rounded-lg">
-              <Responsive width={30} height={30} className="text-purple-500" />
+              <Responsive width={30} height={30} className="text-purple-500 flex-shrink-0" />
               <span className="text-gray-700 dark:text-white text-lg">
                 Fully responsive
               </span>
             </div>
             <div className="flex items-center gap-4 p-5 bg-gray-100 dark:bg-neutral-800 rounded-lg">
-              <Moon width={30} height={30} className="text-indigo-500" />
+              <Moon width={30} height={30} className="text-indigo-500 flex-shrink-0" />
               <span className="text-gray-700 dark:text-white text-lg">
                 Dark mode support
               </span>
@@ -103,9 +103,18 @@ export const Demo = () => {
             <div className="flex items-center gap-4 p-5 bg-gray-100 dark:bg-neutral-800 rounded-lg">
               <Palette width={30} height={30} className="text-pink-500 flex-shrink-0" />
               <span className="text-gray-700 dark:text-white text-lg">
-                Customizable color-coded categories
+                Customizable categories
               </span>
             </div>
+            <a               
+              href="https://github.com/johannes-aas/react-calendar"
+              className="flex items-center gap-4 p-5 bg-gray-100 hover:bg-blue-50 dark:hover:bg-gray-800 dark:bg-neutral-800 rounded-lg"
+            >
+              <Github width={30} height={30} className="text-pink-black flex-shrink-0" />
+              <span className="text-gray-700 dark:text-white text-lg">
+                View on Github
+              </span>
+            </a>
           </div>
           <div>
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
