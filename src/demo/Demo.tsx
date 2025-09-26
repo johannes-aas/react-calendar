@@ -70,37 +70,37 @@ export const Demo = () => {
       />
       <EventCalendar year={view.year} month={view.month} events={events} />
       
-      <div className="bg-gray-100 dark:bg-neutral-900 mt-20 mb-10">
+      <div className="mt-20 mb-10">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold mb-6">
             Features
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <div className="flex items-center gap-4 p-5 bg-white dark:bg-neutral-800 rounded-lg">
+            <div className="flex items-center gap-4 p-5 bg-gray-100 dark:bg-neutral-800 rounded-lg">
               <MultiDay width={30} height={30} className="text-blue-500" />
               <span className="text-gray-700 dark:text-white text-lg">
                 Multi-day event support
               </span>
             </div>
-            <div className="flex items-center gap-4 p-5 bg-white dark:bg-neutral-800 rounded-lg">
+            <div className="flex items-center gap-4 p-5 bg-gray-100 dark:bg-neutral-800 rounded-lg">
               <Layout width={30} height={30} className="text-green-500" />
               <span className="text-gray-700 dark:text-white text-lg">
                 Smart layout
               </span>
             </div>
-            <div className="flex items-center gap-4 p-5 bg-white dark:bg-neutral-800 rounded-lg">
+            <div className="flex items-center gap-4 p-5 bg-gray-100 dark:bg-neutral-800 rounded-lg">
               <Responsive width={30} height={30} className="text-purple-500" />
               <span className="text-gray-700 dark:text-white text-lg">
                 Fully responsive
               </span>
             </div>
-            <div className="flex items-center gap-4 p-5 bg-white dark:bg-neutral-800 rounded-lg">
+            <div className="flex items-center gap-4 p-5 bg-gray-100 dark:bg-neutral-800 rounded-lg">
               <Moon width={30} height={30} className="text-indigo-500" />
               <span className="text-gray-700 dark:text-white text-lg">
                 Dark mode support
               </span>
             </div>
-            <div className="flex items-center gap-4 p-5 bg-white dark:bg-neutral-800 rounded-lg">
+            <div className="flex items-center gap-4 p-5 bg-gray-100 dark:bg-neutral-800 rounded-lg">
               <Palette width={30} height={30} className="text-pink-500 flex-shrink-0" />
               <span className="text-gray-700 dark:text-white text-lg">
                 Customizable color-coded categories
