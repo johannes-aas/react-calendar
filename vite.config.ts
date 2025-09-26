@@ -8,9 +8,10 @@ export default defineConfig({
     tailwindcss(),
   ],
   server: {
-    host: true, // makes Vite listen on 0.0.0.0
+    host: true,
     allowedHosts: [
-      'eb82ffb88c59.ngrok-free.app' // <— your ngrok hostname
+      'eb82ffb88c59.ngrok-free.app'
     ]
-  }
+  },
+  base: '/react-calendar/'
 });
