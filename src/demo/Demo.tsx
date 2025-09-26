@@ -2,9 +2,13 @@ import { EventCalendar } from "../components/EventCalendar"
 import { EventCalendarHeader } from "../components/EventCalendarHeader";
 import { useState, useEffect } from "react";
 import { events } from "./events";
-import { Sun } from "../icons/Sun";
-import { Moon } from "../icons/Moon";
-import { Github } from "./Github";
+import { Sun } from "./icons/Sun";
+import { Moon } from "./icons/Moon";
+import { Github } from "./icons/Github";
+import { Layout } from "./icons/Layout";
+import { Responsive } from "./icons/Responsive";
+import { MultiDay } from "./icons/MultiDay";
+import { Palette } from "./icons/Palette";
 
 export const Demo = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -59,62 +63,69 @@ export const Demo = () => {
 
       <div className="h-0.5 bg-gray-200 dark:bg-neutral-800 my-4"/>
 
-      {/* Calendar Component */}
-      <div className="mb-8">
-        <EventCalendarHeader
-          year={view.year}
-          month={view.month}
-          onNavigate={(year, month) => setView({ year, month })}
-        />
-        <EventCalendar year={view.year} month={view.month} events={events} />
-      </div>
-
-      {/* Features and Info Section */}
-      <div className="space-y-2 pt-8">        
-
-        {/* Features Section */}
-        <div className="bg-gray-50 dark:bg-neutral-800 rounded-lg p-8">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+      <EventCalendarHeader
+        year={view.year}
+        month={view.month}
+        onNavigate={(year, month) => setView({ year, month })}
+      />
+      <EventCalendar year={view.year} month={view.month} events={events} />
+      
+      <div className="bg-gray-100 dark:bg-neutral-900 mt-20 mb-10">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6">
             Features
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <span className="w-2 h-2 bg-blue-300 rounded-full"></span>
-              <span>Multi-day event support</span>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="flex items-center gap-4 p-5 bg-white dark:bg-neutral-800 rounded-lg">
+              <MultiDay width={30} height={30} className="text-blue-500" />
+              <span className="text-gray-700 dark:text-white text-lg">
+                Multi-day event support
+              </span>
             </div>
-            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <span className="w-2 h-2 bg-blue-300 rounded-full"></span>
-              <span>Smart event layout</span>
+            <div className="flex items-center gap-4 p-5 bg-white dark:bg-neutral-800 rounded-lg">
+              <Layout width={30} height={30} className="text-green-500" />
+              <span className="text-gray-700 dark:text-white text-lg">
+                Smart layout
+              </span>
             </div>
-            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <span className="w-2 h-2 bg-blue-300 rounded-full"></span>
-              <span>Fully responsive</span>
+            <div className="flex items-center gap-4 p-5 bg-white dark:bg-neutral-800 rounded-lg">
+              <Responsive width={30} height={30} className="text-purple-500" />
+              <span className="text-gray-700 dark:text-white text-lg">
+                Fully responsive
+              </span>
             </div>
-            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <span className="w-2 h-2 bg-blue-300 rounded-full"></span>
-              <span>Dark mode support</span>
+            <div className="flex items-center gap-4 p-5 bg-white dark:bg-neutral-800 rounded-lg">
+              <Moon width={30} height={30} className="text-indigo-500" />
+              <span className="text-gray-700 dark:text-white text-lg">
+                Dark mode support
+              </span>
             </div>
-            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <span className="w-2 h-2 bg-blue-300 rounded-full"></span>
-              <span>Customizable color-coded categories</span>
+            <div className="flex items-center gap-4 p-5 bg-white dark:bg-neutral-800 rounded-lg">
+              <Palette width={30} height={30} className="text-pink-500 flex-shrink-0" />
+              <span className="text-gray-700 dark:text-white text-lg">
+                Customizable color-coded categories
+              </span>
             </div>
           </div>
-        </div>
-
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2">
-          <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
-            React
-          </span>
-          <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
-            TypeScript
-          </span>
-          <span className="px-3 py-1 bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 rounded-full text-sm font-medium">
-            Tailwind CSS
-          </span>
-          <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">
-            Floating UI
-          </span>
+          <div>
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+              Built with:
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
+                React
+              </span>
+              <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
+                TypeScript
+              </span>
+              <span className="px-4 py-2 bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 rounded-full text-sm font-medium">
+                Tailwind CSS
+              </span>
+              <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">
+                Floating UI
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
