@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.16",
@@ -34,5 +34,5 @@
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2"
   },
-  "homepage": "https://johannes-aas.github.io/react-calendar",
+  "homepage": "https://johannes-aas.github.io/react-calendar"
 }
