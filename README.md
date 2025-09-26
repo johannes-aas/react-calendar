@@ -1,69 +1,165 @@
-# React + TypeScript + Vite
+# React Event Calendar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive event calendar component built with React, TypeScript, and Tailwind. Features multi-day event support with smart layout computation, and customizable event categories.
 
-Currently, two official plugins are available:
+![React Event Calendar](https://img.shields.io/badge/React-19.1.1-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.13-38B2AC)
+![Vite](https://img.shields.io/badge/Vite-7.1.2-646CFF)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Get started
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+```bash
+# Clone the repository
+git clone https://github.com/johannes-aas/react-calendar.git
+cd react-calendar
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Install dependencies
+npm install
+# or
+pnpm install
+# or
+yarn install
+
+# Start development server
+npm run dev
+# or
+pnpm dev
+# or
+yarn dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Basic Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```tsx
+import { EventCalendar } from './components/EventCalendar'
+import { EventCalendarHeader } from './components/EventCalendarHeader'
+import { useState } from 'react'
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
+function App() {
+  const [view, setView] = useState({ year: 2025, month: 0 })
+  
+  const events = [
+    {
+      id: '1',
+      title: 'Team Meeting',
+      start: new Date(2024, 0, 15, 10, 0),
+      end: new Date(2024, 0, 15, 11, 0),
+      type: 'course',
+      locationName: 'Conference Room A'
     },
+    {
+      id: '2',
+      title: 'Multi-day Conference',
+      start: new Date(2024, 0, 20, 9, 0),
+      end: new Date(2024, 0, 22, 17, 0),
+      type: 'networking',
+      locationName: 'Convention Center'
+    }
+  ]
+
+  return (
+    <div>
+      <EventCalendarHeader
+        year={view.year}
+        month={view.month}
+        onNavigate={(year, month) => setView({ year, month })}
+      />
+      <EventCalendar 
+        year={view.year} 
+        month={view.month} 
+        events={events} 
+      />
+    </div>
+  )
+}
+```
+
+## Reference
+
+### EventCalendar Props
+
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| `year` | `number` | ✅ | The year to display |
+| `month` | `number` | ✅ | The month to display (0-11) |
+| `events` | `Event[]` | ✅ | Array of events to display |
+
+### Event Interface
+
+```tsx
+interface Event {
+  id: string
+  title: string
+  start: Date
+  end: Date
+  locationName?: string
+  type?: EventCategoryKey
+  link?: string
+}
+```
+
+### EventCalendarHeader Props
+
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| `year` | `number` | ✅ | Current year |
+| `month` | `number` | ✅ | Current month (0-11) |
+| `onNavigate` | `(year: number, month: number) => void` | ✅ | Navigation callback |
+
+## Configure categories
+
+Customize categories using tailwind:
+
+```tsx
+// src/config/eventCategories.ts
+
+export const eventCategories = {
+  social: {
+    displayName: "Social",
+    classes: {
+      // The dot for the color guide at the bottom
+      guide: "bg-blue-500 dark:bg-blue-600",
+
+      // The item trigger
+      item: "bg-blue-100 text-blue-900 border-blue-500 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-600",
+
+      itemFade: "to-blue-100 dark:to-blue-950",
+
+      // popover card
+      card: "bg-blue-100 text-blue-950 border-blue-200 hover:border-blue-300 dark:bg-blue-950 dark:text-blue-50 dark:border-blue-900 dark:hover:border-blue-800",
+
+      // category badge
+      badge: "bg-blue-200 text-blue-700 dark:bg-blue-800 dark:text-blue-200",
   },
-])
+  // Add more categories...
+}
+```
+
+
+## Development
+
+### Project Structure
+
+```
+src/
+├── components/
+│   ├── EventCalendar.tsx
+│   ├── EventCalendarHeader.tsx
+│   └── EventCalendarItem.tsx
+├── config/
+│   └── eventCategories.ts
+├── demo/
+│   ├── Demo.tsx
+│   ├── events.ts
+│   └── icons/
+├── types/
+│   └── types.ts
+└── utils/
+    ├── computeCalendarLayout.ts
+    └── utils.ts
 ```
