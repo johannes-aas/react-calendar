@@ -109,7 +109,7 @@ interface Event {
 
 ## Configure categories
 
-Customize categories using tailwind:
+Customize categories using tailwind. Example category:
 
 ```tsx
 // src/config/eventCategories.ts
@@ -122,7 +122,10 @@ export const eventCategories = {
       guide: "bg-blue-500 dark:bg-blue-600",
 
       // The item trigger
-      item: "bg-blue-100 text-blue-900 border-blue-500 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-600",
+      item: "bg-blue-100 text-blue-900 dark:bg-blue-950 dark:text-blue-300",
+
+      // The item trigger left border
+      itemBorder: "border-blue-500 dark:border-blue-600"
 
       // Gradient to fade out overflowing text, must match background of item 
       itemFade: "to-blue-100 dark:to-blue-950",
@@ -138,16 +141,15 @@ export const eventCategories = {
 ```
 
 
-## Development
-
-### Project Structure
+## Project Structure
 
 ```
 src/
 ├── components/
 │   ├── EventCalendar.tsx
 │   ├── EventCalendarHeader.tsx
-│   └── EventCalendarItem.tsx
+│   ├── EventCalendarItem.tsx
+│   └── icons/
 ├── config/
 │   └── eventCategories.ts
 ├── demo/
