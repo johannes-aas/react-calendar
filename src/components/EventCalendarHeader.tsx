@@ -11,18 +11,18 @@ interface CalendarNavigationProps {
 }
 
 const months = [
-  "Januar",
-  "Februar",
-  "Mars",
+  "January",
+  "February",
+  "March",
   "April",
-  "Mai",
-  "Juni",
-  "Juli",
+  "May",
+  "June",
+  "July",
   "August",
   "September",
-  "Oktober",
+  "October",
   "November",
-  "Desember",
+  "December",
 ]
 
 export const EventCalendarHeader: FC<CalendarNavigationProps> = ({ year, month, onNavigate, className }) => {

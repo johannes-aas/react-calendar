@@ -67,8 +67,7 @@ export const EventCalendar: FC<CalendarProps> = ({ year, month, events }) => {
 
   const cal = computeCalendarLayout(year, month, events)
   const eventTypeGuideItems = getEventTypeGuide(events)
-
-  const weekdays = ["Man", "Tir", "Ons", "Tor", "Fre", "Lør", "Søn"]
+  const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
   const nowDate = new Date()
   nowDate.setHours(0, 0, 0, 0)
