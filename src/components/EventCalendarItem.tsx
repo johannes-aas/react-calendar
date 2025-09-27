@@ -15,8 +15,8 @@ import {
 import { type Event } from "../types/types";
 import { cn, formatEventTime } from "../utils/utils";
 import { eventCategories } from "../config/eventCategories";
-import { Clock } from "../icons/Clock";
-import { Location } from "../icons/Location";
+import { Clock } from "./icons/Clock";
+import { Location } from "./icons/Location";
 
 interface EventHoverCardProps {
   event: Event;

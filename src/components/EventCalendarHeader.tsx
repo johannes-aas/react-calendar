@@ -1,5 +1,5 @@
-import { ChevronLeft } from "../icons/ChevronLeft"
-import { ChevronRight } from "../icons/ChevronRight"
+import { ChevronLeft } from "./icons/ChevronLeft"
+import { ChevronRight } from "./icons/ChevronRight"
 import { cn } from "../utils/utils"
 import type { FC } from "react"
 
