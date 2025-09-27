@@ -9,6 +9,7 @@ import { Layout } from "./icons/Layout";
 import { Responsive } from "./icons/Responsive";
 import { MultiDay } from "./icons/MultiDay";
 import { Palette } from "./icons/Palette";
+import { ArrowUpRight } from "./icons/ArrowUpRight";
 
 export const Demo = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -114,6 +115,7 @@ export const Demo = () => {
               <span className="text-gray-700 dark:text-white text-lg">
                 View on Github
               </span>
+              <ArrowUpRight className="ml-auto" width={30} height={30}/>
             </a>
           </div>
           <div>
