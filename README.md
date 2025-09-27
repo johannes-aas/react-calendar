@@ -7,6 +7,7 @@ A modern, responsive event calendar component built with React, TypeScript, and 
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.13-38B2AC)
 ![Vite](https://img.shields.io/badge/Vite-7.1.2-646CFF)
 
+[Check out the live demo](https://johannes-aas.github.io/react-calendar/)
 
 ![Calendar preview](./calendar.png)
 
