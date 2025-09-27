@@ -31,5 +31,5 @@ export function formatEventTime(start: string | Date, end: string | Date) {
   }
 
   // Multi-day event
-  return `${startDate.toLocaleDateString([], { month: 'short', day: 'numeric' })} ${startDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false })} - ${endDate.toLocaleDateString([], { month: 'short', day: 'numeric' })} ${endDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false })}`;
+  return `${startDate.toLocaleDateString([], { month: 'short', day: 'numeric' })}, ${startDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false })} - ${endDate.toLocaleDateString([], { month: 'short', day: 'numeric' })}, ${endDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false })}`;
 };

@@ -21,11 +21,13 @@ import { Location } from "./icons/Location";
 interface EventHoverCardProps {
   event: Event;
   className?: string;
+  active?: boolean;
 }
 
 export const EventCalendarItem = ({
   event,
   className,
+  active = true,
 }: EventHoverCardProps) => {
   const [open, setOpen] = React.useState(false);
 
@@ -59,12 +61,12 @@ export const EventCalendarItem = ({
     role,
   ]);
 
-  // Pick category config (or default)
   const category = event.type ? eventCategories[event.type] : undefined;
-  const triggerClasses = category?.classes.item ?? "";
-  const cardClasses = category?.classes.card ?? "bg-white";
-  const badgeClasses = category?.classes.badge ?? "bg-gray-200 text-gray-700";
-  const categoryName = category?.displayName ?? "Other";
+  const triggerClasses = category?.classes.item ?? "bg-gray-100 dark:bg-neutral-800";
+  const borderClasses = category?.classes.itemBorder ?? "border-gray-500 dark:border-neutral-500";
+  const cardClasses = category?.classes.card ?? "bg-gray-100 border-gray-300 dark:bg-neutral-800 dark:border-neutral-600";
+  const badgeClasses = category?.classes.badge ?? "";
+  const categoryName = category?.displayName ?? "";
   const fade = category?.classes.itemFade ?? "";
 
   const cardContent = (
@@ -98,7 +100,8 @@ export const EventCalendarItem = ({
         {...getReferenceProps()}
         className={cn(
           "cursor-default ml-[2px] mr-[1px] my-0.5 pl-[0.2rem] sm:pl-[0.4rem] text-xs sm:text-sm sm:mx-1 overflow-hidden relative",
-          triggerClasses,
+          borderClasses,
+          active ? triggerClasses : "bg-gray-100 text-gray-500 dark:bg-neutral-800 dark:text-neutral-400",
           className
         )}
       >
@@ -107,7 +110,7 @@ export const EventCalendarItem = ({
           <div
             className={cn(
               "absolute inset-y-0 right-0 w-5 bg-gradient-to-r from-transparent pointer-events-none",
-              fade
+              active ? fade : "to-gray-100 dark:to-neutral-800"
             )}
           />
         </div>

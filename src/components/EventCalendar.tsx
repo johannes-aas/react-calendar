@@ -139,11 +139,12 @@ export const EventCalendar: FC<CalendarProps> = ({ year, month, events }) => {
                   return (
                     <EventCalendarItem
                       event={event} 
+                      active={event.eventDisplayProps.active}
                       className={cn(
                         getColStartClass(event.eventDisplayProps.startCol + 2),
                         getColSpanClass(event.eventDisplayProps.span),
                         event.eventDisplayProps.leftEdge && "sm:border-l-4 rounded-l-md",
-                        event.eventDisplayProps.rightEdge && "rounded-r-md"
+                        event.eventDisplayProps.rightEdge && "rounded-r-lg"
                       )}
                     />
                   )
